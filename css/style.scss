@@ -1,0 +1,204 @@
+$primary: #70d2de;
+$secondary: #5e5e5e;
+$third: #ffffff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  width: 100%;
+  nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 85px;
+    padding: 0 80px;
+    background-color: $third;
+    .logo {
+      padding-right: 60px;
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        img {
+          width: 40px;
+          height: 45px;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        top: 0;
+        right: 0;
+        border-radius: 3px;
+        background-color: rgba(182, 182, 182, 0.6);
+      }
+    }
+    .navMenu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+      padding-left: 60px;
+      a {
+        text-decoration: none;
+        color: $secondary;
+        font-weight: bold;
+        transition: 0.3s ease;
+        font-size: 16px;
+        &:hover {
+          color: $primary;
+        }
+      }
+      .activeMenu {
+        color: $primary;
+        font-weight: bold;
+        transition: 0.3s ease;
+      }
+    }
+  }
+  main {
+    section.mainSlide {
+      width: 100%;
+      height: 500px;
+      position: relative;
+      .mainText {
+        position: absolute;
+        top: 40px;
+        right: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        color: $third;
+        h1 {
+          font-size: 38px;
+        }
+        h2 {
+          font-size: 30px;
+        }
+        button {
+          background: linear-gradient(90deg, #f76ab3 0%, #fc5296 100%);
+          border: 1px solid #b90a96;
+          padding: 15px 20px;
+          color: $third;
+          font-weight: bold;
+          font-size: 15px;
+          border-radius: 8px;
+          text-shadow: 0 -2px 0 #c026a1;
+          transition: 0.3s ease;
+          cursor: pointer;
+          &:hover {
+            background: linear-gradient(90deg, #f78fc5 0%, #f7619d 100%);
+          }
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    section.favouriteRooms {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 80px;
+      margin-top: 80px;
+      h1 {
+        color: $secondary;
+        font-weight: normal;
+        font-size: 24px;
+        background-color: $third;
+      }
+      div.favouriteRoomsList {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 80px;
+        .roomCard {
+          max-width: 350px;
+          width: 100%;
+          height: 235px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+          overflow: hidden;
+          cursor: pointer;
+          img {
+            max-width: 350px;
+            width: 100%;
+            height: 200px;
+            transition: 0.4s ease-in-out;
+          }
+          .roomInfo {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            gap: 20px;
+            transition: 0.4s ease-in-out;
+            div {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 100%;
+              padding: 0 10px;
+              span.roomPrice {
+                color: $primary;
+                font-weight: bold;
+                font-size: 14px;
+              }
+              span.roomName {
+                font-weight: bold;
+                font-size: 14px;
+                color: $secondary;
+              }
+            }
+            button {
+              transition: 0.4s ease-in-out;
+              width: 100%;
+              background-color: #75c5cf;
+              padding: 10px 0;
+              border: 1px solid #35929e;
+              border-radius: 7px;
+              text-shadow: 0 -1px 0 #50878e;
+              color: $third;
+              font-weight: bold;
+              font-size: 16px;
+              cursor: pointer;
+            }
+          }
+          &:hover {
+            img {
+              transform: translateY(-100%);
+            }
+            .roomInfo {
+              transform: translateY(-200%);
+            }
+            button {
+              transform: translateY(-20%);
+              &:hover {
+                background-color: #5d959c;
+                border: 1px solid #35929e;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
