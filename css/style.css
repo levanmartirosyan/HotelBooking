@@ -315,7 +315,7 @@ body main section.UspSection .usp .uspBox .texts a:hover {
 }
 body main section.hotels {
   width: 100%;
-  height: 61.2vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
