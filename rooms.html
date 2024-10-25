@@ -22,6 +22,91 @@
         <a href="./bookrooms.html">Booked Rooms</a>
       </div>
     </nav>
-    <main></main>
+    <main>
+      <section class="rooms">
+        <div class="roomTypes" id="roomTypes">
+          <span onclick="getAllRooms()">All</span>
+        </div>
+        <form action="" class="filterForm" id="filterForm">
+          <div>
+            <div class="price-range">
+              <div>
+                <label for="priceRange">Price Per Night</label>
+              </div>
+              <div class="range-slider">
+                <input
+                  type="range"
+                  id="minPrice"
+                  name="priceFrom"
+                  min="0"
+                  max="500"
+                  value="0"
+                  oninput="updateDualRange()"
+                />
+                <input
+                  type="range"
+                  id="maxPrice"
+                  name="priceTo"
+                  min="0"
+                  max="500"
+                  value="9999"
+                  oninput="updateDualRange()"
+                />
+                <div class="slider-track"></div>
+              </div>
+              <div class="price-values">
+                <span id="minPriceValue">€ 0</span>
+                <span id="maxPriceValue">€ 500</span>
+              </div>
+            </div>
+          </div>
+          <div class="roomTypeSelect">
+            <label for="">RoomT Type</label>
+            <select name="roomTypeId" id="">
+              <option value="">Select room</option>
+              <option value="1">Single room</option>
+              <option value="2">double room</option>
+              <option value="3">deluxe room</option>
+            </select>
+          </div>
+          <div class="checkInOut">
+            <div>
+              <label for="">Check-in</label>
+              <input type="date" name="checkIn" id="checkin" min="" />
+            </div>
+            <div>
+              <label for="">Check-out</label>
+              <input type="date" name="checkOut" id="checkout" min="" />
+            </div>
+          </div>
+          <div class="guests">
+            <label for="">Guests</label>
+            <select name="maximumGuests" id="">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="btnBox">
+            <button class="btn" type="submit">FILTER</button>
+            <button
+              class="btn"
+              type="reset"
+              id="resetBtn"
+              onclick="validateDates()"
+            >
+              RESET
+            </button>
+          </div>
+        </form>
+        <div class="roomsList" id="rooms"></div>
+      </section>
+    </main>
+    <footer>
+      <p>© 2023 IT Academy Step All; Rights Reserved</p>
+    </footer>
+    <script src="./js/rooms.js"></script>
   </body>
 </html>

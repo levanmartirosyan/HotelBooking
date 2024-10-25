@@ -1,19 +1,16 @@
-let cities = document.getElementById("cities");
 let hotels = document.getElementById("hotels");
 
-async function getAllHotels() {
-  let hotelList = await fetch(
-    "https://hotelbooking.stepprojects.ge/api/Hotels/GetAll"
-  );
-  return hotelList.json();
+function getAllHotels() {
+  fetch("https://hotelbooking.stepprojects.ge/api/Hotels/GetAll")
+    .then((response) => response.json())
+    .then((data) => {
+      hotels.innerHTML = "";
+      data.forEach((item) => {
+        hotels.innerHTML += showAllHotels(item);
+      });
+    });
 }
-
-getAllHotels().then((data) => {
-  hotels.innerHTML = "";
-  data.forEach((item) => {
-    hotels.innerHTML += showAllHotels(item);
-  });
-});
+getAllHotels();
 
 function showAllHotels(item) {
   return `

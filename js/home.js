@@ -22,6 +22,7 @@ function getFavoriteRooms() {
   fetch("https://hotelbooking.stepprojects.ge/api/Rooms/GetAll")
     .then((response) => response.json())
     .then((data) => {
+      favoriteRooms.innerHTML = "";
       let limitedRooms = data.slice(0, 6);
       limitedRooms.forEach((item) => {
         favoriteRooms.innerHTML += showFavoriteCards(item);
