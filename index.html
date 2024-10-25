@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page | Hotel Booking</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <nav>
@@ -16,10 +23,10 @@
         /></a>
       </div>
       <div class="navMenu">
-        <a href="#" class="activeMenu">Home</a>
-        <a href="#">Rooms</a>
-        <a href="#">Hotels</a>
-        <a href="#">Booked Rooms</a>
+        <a href="./index.html" class="activeMenu">Home</a>
+        <a href="./rooms.html">Rooms</a>
+        <a href="./hotels.html">Hotels</a>
+        <a href="./bookrooms.html">Booked Rooms</a>
       </div>
     </nav>
     <main>
@@ -27,15 +34,87 @@
         <div class="mainText">
           <h1>☆ ☆ ☆ ☆ ☆ Five Star Hotels ☆ ☆ ☆ ☆ ☆</h1>
           <h2>And we like to keep it that way!</h2>
-          <button>SEE HOTELS</button>
+          <a href="./hotels.html">SEE HOTELS</a>
         </div>
         <img src="./images/slide-bg.jpg" alt="" />
       </section>
       <section class="favouriteRooms">
-        <h1>Guests Favorite Rooms</h1>
+        <div class="title">
+          <div class="titleLine"></div>
+          <h1>Guests Favorite Rooms</h1>
+          <div class="titleLine"></div>
+        </div>
         <div class="favouriteRoomsList" id="favoriteRoomsList"></div>
       </section>
+      <section class="UspSection">
+        <div class="title">
+          <div class="titleLine"></div>
+          <h1>USP section</h1>
+          <div class="titleLine"></div>
+        </div>
+        <div class="usp">
+          <div class="uspBox">
+            <i class="fa-solid fa-martini-glass-citrus mainIcon"></i>
+            <div class="texts">
+              <h1>Beverages included</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse interdum eleifend augue, quis rhoncus purus
+                fermentum.
+              </p>
+              <a href="#"
+                >Read more <i class="fa-solid fa-chevron-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="uspBox">
+            <i class="fa fa-credit-card fa-lg mainIcon"></i>
+            <div class="texts">
+              <h1>Beverages included</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse interdum eleifend augue, quis rhoncus purus
+                fermentum.
+              </p>
+              <a href="#"
+                >Read more <i class="fa-solid fa-chevron-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="uspBox">
+            <i class="fa fa-cutlery fa-lg mainIcon"></i>
+            <div class="texts">
+              <h1>Beverages included</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse interdum eleifend augue, quis rhoncus purus
+                fermentum.
+              </p>
+              <a href="#"
+                >Read more <i class="fa-solid fa-chevron-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="uspBox">
+            <i class="fa fa-tint fa-lg mainIcon"></i>
+            <div class="texts">
+              <h1>Beverages included</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse interdum eleifend augue, quis rhoncus purus
+                fermentum.
+              </p>
+              <a href="#"
+                >Read more <i class="fa-solid fa-chevron-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    <footer>
+      <p>© 2023 IT Academy Step All; Rights Reserved</p>
+    </footer>
     <script src="./js/home.js"></script>
   </body>
 </html>
