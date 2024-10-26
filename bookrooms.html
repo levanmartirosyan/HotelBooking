@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <div id="loading" style="display: none" class="loadingGif">
+      <img src="./images/loading.gif" alt="Loading..." />
+    </div>
     <nav>
       <div class="logo">
         <a href="./index.html"
@@ -22,8 +25,32 @@
         <a href="./bookrooms.html" class="activeMenu">Booked Rooms</a>
       </div>
     </nav>
+    <main>
+      <section class="bookedRooms">
+        <div class="cities">
+          <span>All</span>
+          <span>Tbilisi</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2">Hotel</th>
+              <th colspan="2">Room</th>
+              <th colspan="3">Customer</th>
+              <th>Status</th>
+              <th>Check in</th>
+              <th>Check out</th>
+              <th>Total Price</th>
+              <th colspan="2">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="bookedRooms"></tbody>
+        </table>
+      </section>
+    </main>
     <footer>
       <p>© 2023 IT Academy Step All; Rights Reserved</p>
     </footer>
+    <script src="./js/bookedrooms.js"></script>
   </body>
 </html>

@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <div id="loading" style="display: none" class="loadingGif">
+      <img src="./images/loading.gif" alt="Loading..." />
+    </div>
     <nav>
       <div class="logo">
         <a href="./index.html"
@@ -39,7 +42,7 @@
                   id="minPrice"
                   name="priceFrom"
                   min="0"
-                  max="500"
+                  max="1000"
                   value="0"
                   oninput="updateDualRange()"
                 />
@@ -48,15 +51,15 @@
                   id="maxPrice"
                   name="priceTo"
                   min="0"
-                  max="500"
-                  value="9999"
+                  max="1000"
+                  value="1000"
                   oninput="updateDualRange()"
                 />
                 <div class="slider-track"></div>
               </div>
               <div class="price-values">
                 <span id="minPriceValue">€ 0</span>
-                <span id="maxPriceValue">€ 500</span>
+                <span id="maxPriceValue">€ 1000</span>
               </div>
             </div>
           </div>

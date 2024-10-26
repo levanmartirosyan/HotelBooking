@@ -7,6 +7,7 @@
 body {
   font-family: sans-serif;
   width: 100%;
+  position: absolute;
 }
 body nav {
   display: flex;
@@ -308,11 +309,11 @@ body main section.rooms .roomsList {
 body main section.rooms form.filterForm {
   display: flex;
   justify-content: center;
-  gap: 20px;
   margin-top: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   padding: 10px;
   width: 100%;
+  gap: 20px;
 }
 body main section.rooms form.filterForm div {
   display: flex;
@@ -334,7 +335,8 @@ body main section.rooms form.filterForm div .price-range label {
 }
 body main section.rooms form.filterForm div .price-range .range-slider {
   position: relative;
-  width: 300px;
+  max-width: 200px;
+  width: 100%;
   height: 5px;
 }
 body main section.rooms form.filterForm div .price-range .range-slider input[type=range] {
@@ -405,7 +407,7 @@ body main section.rooms form.filterForm div input[type=date] {
   border: 1px solid #007785;
   height: 40px;
   border-radius: 3px;
-  width: 180px;
+  width: 160px;
   padding: 0 10px;
 }
 body main section.rooms form.filterForm div select {
@@ -415,18 +417,43 @@ body main section.rooms form.filterForm div select {
   width: 100%;
   padding: 0 10px;
 }
-body main section.rooms form.filterForm div #roomTypeSelect {
-  max-width: 180px;
+body main section.rooms form.filterForm .roomTypeSelect {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+body main section.rooms form.filterForm .roomTypeSelect select {
+  max-width: 160px;
+  width: 100%;
+}
+body main section.rooms form.filterForm .checkInOut {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+body main section.rooms form.filterForm .checkInOut div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+body main section.rooms form.filterForm .checkInOut div input {
+  max-width: 160px;
   width: 100%;
 }
 body main section.rooms form.filterForm .guests {
   display: flex;
   flex-direction: column;
+  width: 50%;
+}
+body main section.rooms form.filterForm .guests select {
+  max-width: 70px;
+  width: 100%;
 }
 body main section.rooms form.filterForm .btnBox {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  width: 100%;
 }
 body main section.rooms form.filterForm .btnBox button {
   color: #fff;
@@ -434,7 +461,8 @@ body main section.rooms form.filterForm .btnBox button {
   font-size: 16px;
   background-color: #8ccfd7;
   border: 1px solid #007785;
-  width: 150px;
+  max-width: 150px;
+  width: 100%;
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -444,19 +472,92 @@ body main section.rooms form.filterForm .btnBox button:hover {
   background-color: #55949b;
   border-color: #007785;
 }
-body main section.rooms form.filterForm .dateInputs {
-  display: flex;
-  gap: 15px;
-}
-body main section.rooms form.filterForm .dateInputs div {
+body main section.bookedRooms {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  padding: 0 10%;
+  margin-top: 30px;
 }
-body main section.rooms form.filterForm .dateInputs div label {
-  margin-bottom: 5px;
+body main section.bookedRooms .cities {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 15px;
+  font-size: 15px;
+  color: #5e5e5e;
 }
-body main section.rooms form.filterForm .dateInputs div input {
-  width: 180px;
+body main section.bookedRooms .cities span:nth-child(1) {
+  width: 45px;
+  height: 40px;
+  background-color: #70d2de;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 15px;
+}
+body main section.bookedRooms table {
+  margin-top: 50px;
+  width: 100%;
+}
+body main section.bookedRooms table thead {
+  position: relative;
+  border: 2px solid rgba(182, 182, 182, 0.6);
+}
+body main section.bookedRooms table thead tr th {
+  font-size: 14px;
+  color: #5e5e5e;
+  text-align: left;
+}
+body main section.bookedRooms table tbody {
+  width: 100%;
+}
+body main section.bookedRooms table tbody tr {
+  width: 100%;
+}
+body main section.bookedRooms table tbody tr td {
+  width: 100%;
+  padding: 5px;
+  text-align: left;
+}
+body main section.bookedRooms table tbody tr td img {
+  width: 45px;
+  height: 45px;
+  margin-top: 20px;
+}
+body main section.bookedRooms table tbody tr td p {
+  font-weight: bold;
+  font-size: 14px;
+  color: #5e5e5e;
+  padding-bottom: 10px;
+}
+body main section.bookedRooms table tbody tr td span {
+  font-size: 14px;
+}
+body main section.bookedRooms table tbody tr td span.status {
+  background-color: #adadad;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+body main section.bookedRooms table tbody tr td button {
+  padding: 10px 15px;
+  border: 0;
+  background-color: #c30d0d;
+  color: #ffffff;
+  border-radius: 3px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+body main section.bookedRooms table tbody tr td button:hover {
+  background-color: #e72d2d;
 }
 body .roomCard {
   max-width: 400px;
@@ -541,4 +642,11 @@ body footer {
 body footer p {
   color: #b8b8b8;
   font-size: 14px;
+}
+body .loadingGif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 }/*# sourceMappingURL=style.css.map */

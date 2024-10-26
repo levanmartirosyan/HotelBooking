@@ -5,6 +5,7 @@ let cards = document.getElementById("cards");
 let resetBtn = document.getElementById("resetBtn");
 let checkIn = document.getElementById("checkin");
 let checkOut = document.getElementById("checkout");
+let loading = document.getElementById("loading");
 
 function showAllRooms(item) {
   return `
@@ -25,12 +26,14 @@ function showAllRooms(item) {
 }
 
 function getAllRooms() {
+  loading.style.display = "block";
   fetch("https://hotelbooking.stepprojects.ge/api/Rooms/GetAll")
     .then((response) => response.json())
     .then((data) => {
       rooms.innerHTML = "";
       data.forEach((item) => {
         rooms.innerHTML += showAllRooms(item);
+        loading.style.display = "none";
       });
     });
 }
@@ -38,8 +41,22 @@ getAllRooms();
 
 function showRoomTypes(item) {
   return `
-    <span class="roomTypesItem" onclick="showRoomsByCategory(${item.id})">${item.name}</span>
+    <span class="roomTypesItem" onclick="showRoomsByCategory(${item.roomTypeId})">${item.name}</span>
     `;
+}
+
+function showRoomsByCategory(roomTypeId) {
+  fetch(`https://hotelbooking.stepprojects.ge/api/Rooms/GetAll`)
+    .then((response) => response.json())
+    .then((finalData) => {
+      const filteredRooms = finalData.filter(
+        (room) => room.roomTypeId === roomTypeId
+      );
+      console.log(filteredRooms);
+
+      rooms.innerHTML = "";
+      rooms.innerHTML += showAllRooms(filteredRooms);
+    });
 }
 
 function getRoomTypes() {
@@ -139,4 +156,14 @@ function updateSliderTrack() {
   let maxPercent = ((maxPrice.value - min) / (max - min)) * 100;
 
   sliderTrack.style.background = `linear-gradient(to right, #ddd ${minPercent}%, #8ccfd7 ${minPercent}%, #8ccfd7 ${maxPercent}%, #ddd ${maxPercent}%)`;
+
+  document.getElementById("minPriceValue").innerText = `€ ${minPrice.value}`;
+  document.getElementById("maxPriceValue").innerText = `€ ${maxPrice.value}`;
 }
+
+document
+  .getElementById("minPrice")
+  .addEventListener("input", updateSliderTrack);
+document
+  .getElementById("maxPrice")
+  .addEventListener("input", updateSliderTrack);
