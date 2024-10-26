@@ -91,24 +91,6 @@ filterForm.addEventListener("submit", function (e) {
     });
 });
 
-function showRooms(item) {
-  return `
-    <div class="roomCard">
-  <img
-    src="${item.images[0].source}"
-    alt=""
-  />
-  <div class="roomInfo">
-    <div>
-      <span class="roomName">${item.name}</span>
-      <span class="roomPrice">€ ${item.pricePerNight}</span>
-    </div>
-    <button onclick="gotoDetails(${item.id})">BOOK NOW</button>
-  </div>
-</div>
-`;
-}
-
 resetBtn.addEventListener("click", function () {
   location.reload();
 });
