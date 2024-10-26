@@ -23,8 +23,12 @@ function showAllHotels(item) {
                 <div>
                   <span class="roomName">${item.name}</span>
                 </div>
-                <button>VIEW ROOMS</button>
+                <button onclick="goToRoomsPage()">VIEW ROOMS</button>
               </div>
             </div>
       `;
+}
+
+function goToRoomsPage() {
+  window.location.href = "./rooms.html";
 }

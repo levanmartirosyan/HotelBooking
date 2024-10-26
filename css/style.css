@@ -308,6 +308,7 @@ body main section.rooms .roomsList {
 }
 body main section.rooms form.filterForm {
   display: flex;
+  align-items: center;
   justify-content: center;
   margin-top: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -520,7 +521,6 @@ body main section.bookedRooms table tbody tr {
   width: 100%;
 }
 body main section.bookedRooms table tbody tr td {
-  width: 100%;
   padding: 5px;
   text-align: left;
 }
@@ -558,6 +558,277 @@ body main section.bookedRooms table tbody tr td button {
 }
 body main section.bookedRooms table tbody tr td button:hover {
   background-color: #e72d2d;
+}
+body main section.detailsPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  padding: 0 10%;
+  margin-top: 30px;
+}
+body main section.detailsPage .slider {
+  position: relative;
+  max-width: 750px;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+body main section.detailsPage .slider .slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+body main section.detailsPage .slider .slides img {
+  max-width: 750px;
+  width: 100%;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+body main section.detailsPage .slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+body main section.detailsPage .slider button.prev {
+  left: 10px;
+}
+body main section.detailsPage .slider button.next {
+  right: 10px;
+}
+body main section.detailsPage .slider button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+body main section.detailsPage form.bookingForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+body main section.detailsPage form.bookingForm .resTitle {
+  display: flex;
+  align-items: center;
+}
+body main section.detailsPage form.bookingForm .resTitle h1 {
+  color: #5e5e5e;
+  font-weight: normal;
+  font-size: 24px;
+  width: 180px;
+  margin: 0 30px;
+  text-align: center;
+  width: 380px;
+}
+body main section.detailsPage form.bookingForm .resTitle .titleLine {
+  width: 50%;
+  height: 2px;
+  border-radius: 3px;
+  background-color: rgba(182, 182, 182, 0.6);
+}
+body main section.detailsPage form.bookingForm .detailRoomName {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+body main section.detailsPage form.bookingForm .detailRoomName p {
+  font-size: 15px;
+  color: #5e5e5e;
+  font-weight: bold;
+}
+body main section.detailsPage form.bookingForm .detailRoomName span {
+  color: #70d2de;
+  font-weight: bold;
+  font-size: 20px;
+}
+body main section.detailsPage form.bookingForm .detailRoomName span .miniInfo {
+  color: #9c9c9c;
+  font-size: 12px;
+  font-weight: 100;
+}
+body main section.detailsPage form.bookingForm .inputBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 20px;
+}
+body main section.detailsPage form.bookingForm .inputBox label {
+  font-weight: bold;
+  color: #5e5e5e;
+  font-size: 14px;
+}
+body main section.detailsPage form.bookingForm .inputBox input {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #9c9c9c;
+  padding: 7px;
+  outline: none;
+}
+body main section.detailsPage form.bookingForm .inputBox input::-moz-placeholder {
+  color: #9c9c9c;
+}
+body main section.detailsPage form.bookingForm .inputBox input::placeholder {
+  color: #9c9c9c;
+}
+body main section.detailsPage form.bookingForm .btns {
+  width: 100%;
+  padding: 20px;
+}
+body main section.detailsPage form.bookingForm .btns button {
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #8ccfd7;
+  border: 1px solid #007785;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  border-radius: 5px;
+}
+body main section.detailsPage form.bookingForm .btns button:hover {
+  background-color: #55949b;
+  border-color: #007785;
+}
+body main section.roomDescription {
+  width: 100%;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 50px;
+}
+body main section.roomDescription .left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+body main section.roomDescription .left .resTitle {
+  display: flex;
+  align-items: center;
+}
+body main section.roomDescription .left .resTitle h1 {
+  color: #5e5e5e;
+  font-weight: normal;
+  font-size: 24px;
+  width: 180px;
+  margin: 0 30px;
+  text-align: center;
+  width: 380px;
+}
+body main section.roomDescription .left .resTitle .titleLine {
+  width: 50%;
+  height: 2px;
+  border-radius: 3px;
+  background-color: rgba(182, 182, 182, 0.6);
+}
+body main section.roomDescription .left .overview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 50px;
+  width: 100%;
+}
+body main section.roomDescription .left .overview h3 {
+  color: #5e5e5e;
+}
+body main section.roomDescription .left .overview p {
+  color: #535353;
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: 30px;
+}
+body main section.roomDescription .left .overview div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 30px;
+  margin-top: 20px;
+}
+body main section.roomDescription .left .overview div span {
+  color: #535353;
+  font-size: 13px;
+  font-weight: 100;
+}
+body main section.roomDescription .left .overview div span i {
+  color: #70d2de;
+  padding-right: 5px;
+  font-size: 13px;
+}
+body main section.roomDescription .right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+body main section.roomDescription .right .resTitle {
+  display: flex;
+  align-items: center;
+}
+body main section.roomDescription .right .resTitle h1 {
+  color: #5e5e5e;
+  font-weight: normal;
+  font-size: 24px;
+  width: 180px;
+  margin: 0 30px;
+  text-align: center;
+  width: 380px;
+}
+body main section.roomDescription .right .resTitle .titleLine {
+  width: 50%;
+  height: 2px;
+  border-radius: 3px;
+  background-color: rgba(182, 182, 182, 0.6);
+}
+body main section.roomDescription .right .addInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 40px;
+}
+body main section.roomDescription .right .addInfo span {
+  color: #5e5e5e;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
+  font-size: 16px;
+}
+body main section.roomDescription .right .addInfo span span {
+  color: #70d2de;
+  font-size: 16px;
+}
+body main section.roomDescription .right .addInfo span i.fi-ss-check-circle {
+  color: rgb(5, 201, 5);
+}
+body main section.roomDescription .right .addInfo span i.fi-ss-cross-circle {
+  color: rgb(255, 2, 2);
+}
+body main section.roomDescription .right .addInfo span::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(182, 182, 182, 0.6);
+  border-radius: 3px;
 }
 body .roomCard {
   max-width: 400px;
@@ -649,4 +920,8 @@ body .loadingGif {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
+}
+body .loadingGif img {
+  width: 100px;
+  height: 100px;
 }/*# sourceMappingURL=style.css.map */

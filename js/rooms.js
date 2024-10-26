@@ -19,7 +19,7 @@ function showAllRooms(item) {
       <span class="roomName">${item.name}</span>
       <span class="roomPrice">€ ${item.pricePerNight}</span>
     </div>
-    <button>BOOK NOW</button>
+    <button onclick="gotoDetails(${item.id})">BOOK NOW</button>
   </div>
 </div>
 `;
@@ -103,7 +103,7 @@ function showRooms(item) {
       <span class="roomName">${item.name}</span>
       <span class="roomPrice">€ ${item.pricePerNight}</span>
     </div>
-    <button>BOOK NOW</button>
+    <button onclick="gotoDetails(${item.id})">BOOK NOW</button>
   </div>
 </div>
 `;
@@ -167,3 +167,8 @@ document
 document
   .getElementById("maxPrice")
   .addEventListener("input", updateSliderTrack);
+
+function gotoDetails(id) {
+  localStorage.setItem("roomId", id);
+  window.location.href = "./details.html";
+}

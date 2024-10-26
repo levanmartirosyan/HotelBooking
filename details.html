@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details Page | Hotel Booking</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" href="./images/logos.svg" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+  </head>
+  <body>
+    <div id="loading" style="display: none" class="loadingGif">
+      <img src="./images/loading.gif" alt="Loading..." />
+    </div>
+    <nav>
+      <div class="logo">
+        <a href="./index.html"
+          ><img
+            src="https://fsx1.itstep.org/api/v1/files/KI8ivg78U08nXDGDQ-O_18P1-0F49u4b"
+            alt=""
+        /></a>
+      </div>
+      <div class="navMenu">
+        <a href="./index.html" class="activeMenu">Home</a>
+        <a href="./rooms.html">Rooms</a>
+        <a href="./hotels.html">Hotels</a>
+        <a href="./bookrooms.html">Booked Rooms</a>
+      </div>
+    </nav>
+    <main>
+      <section class="detailsPage">
+        <div class="slider">
+          <div class="slides" id="sliderImages"></div>
+          <button class="prev" onclick="changeSlide(-1)">❮</button>
+          <button class="next" onclick="changeSlide(1)">❯</button>
+        </div>
+        <form class="bookingForm" id="bookingForm">
+          <div class="resTitle">
+            <div class="titleLine"></div>
+            <h1>Reservation</h1>
+            <div class="titleLine"></div>
+          </div>
+          <div class="detailRoomName" id="detailRoomName">
+            <p>premium room</p>
+            <span>$ 199 - <span class="miniInfo">a night</span></span>
+          </div>
+          <div class="inputBox">
+            <label for="checkin">Check In</label>
+            <input type="date" name="checkInDate" id="checkin" required />
+          </div>
+          <div class="inputBox">
+            <label for="checkout">Check out</label>
+            <input type="date" name="checkOutDate" id="checkout" required />
+          </div>
+          <div class="inputBox">
+            <label for="">Customer Name</label>
+            <input
+              type="text"
+              name="customerName"
+              id=""
+              placeholder="Enter Your Name"
+              required
+            />
+          </div>
+          <div class="inputBox">
+            <label for="">Customer Phone</label>
+            <input
+              type="text"
+              name="customerPhone"
+              id=""
+              placeholder="Enter Your Phone"
+              required
+            />
+          </div>
+          <div class="btns">
+            <button type="submit">BOOK NOW</button>
+          </div>
+        </form>
+      </section>
+      <section class="roomDescription">
+        <div class="left">
+          <div class="resTitle">
+            <div class="titleLine"></div>
+            <h1>Room Details</h1>
+            <div class="titleLine"></div>
+          </div>
+          <div class="overview">
+            <h3>Table Overview</h3>
+            <div>
+              <span><i class="fi fi-ss-check-circle"></i> Double Bed</span>
+              <span><i class="fi fi-ss-check-circle"></i> Free Internet</span>
+              <span><i class="fi fi-ss-check-circle"></i> Free Newspaper</span>
+              <span><i class="fi fi-ss-check-circle"></i> 60 square meter</span>
+              <span><i class="fi fi-ss-check-circle"></i> Beach view</span>
+              <span><i class="fi fi-ss-check-circle"></i> 2 persons</span>
+              <span><i class="fi fi-ss-check-circle"></i> Double Bed</span>
+              <span><i class="fi fi-ss-check-circle"></i> Free Internet</span>
+              <span
+                ><i class="fi fi-ss-check-circle"></i> Breakfast included</span
+              >
+              <span><i class="fi fi-ss-check-circle"></i> Private Balcony</span>
+              <span><i class="fi fi-ss-check-circle"></i> Flat Screen TV</span>
+              <span><i class="fi fi-ss-check-circle"></i> Jacuzzi</span>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              ligula nibh, cursus id euismod non, scelerisque nec nibh. Nam
+              semper, ligula a rhoncus fermentum, libero lacus vulputate felis,
+              id auctor mauris urna quis diam.
+            </p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="resTitle">
+            <div class="titleLine"></div>
+            <h1>Overview</h1>
+            <div class="titleLine"></div>
+          </div>
+          <div class="addInfo" id="addInfo"></div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>© 2023 IT Academy Step All; Rights Reserved</p>
+    </footer>
+    <script src="./js/details.js"></script>
+  </body>
+</html>
