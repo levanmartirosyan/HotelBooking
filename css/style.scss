@@ -1497,5 +1497,12 @@ body {
   }
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 400px) {
+  body {
+    main {
+      section.hotels {
+        height: auto;
+      }
+    }
+  }
 }

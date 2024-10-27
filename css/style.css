@@ -1414,4 +1414,9 @@ body .hidden {
   body main section.rooms .roomTypes .roomTypesChoosed {
     padding: 7px 10px;
   }
+}
+@media screen and (max-width: 400px) {
+  body main section.hotels {
+    height: auto;
+  }
 }/*# sourceMappingURL=style.css.map */
