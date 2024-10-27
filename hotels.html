@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hotels Page | Hotel Booking</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="icon" href="./images/logos.svg" type="image/png" />
+    <link rel="icon" href="./images/StarHotelLogo.png" type="image/png" />
   </head>
   <body>
     <nav>
       <div class="logo">
-        <a href="./index.html"
-          ><img
-            src="https://fsx1.itstep.org/api/v1/files/KI8ivg78U08nXDGDQ-O_18P1-0F49u4b"
-            alt=""
-        /></a>
+        <a href="./index.html"><img src="./images/logo-retina.png" alt="" /></a>
       </div>
       <div class="navMenu">
         <a href="./index.html">Home</a>
@@ -22,7 +18,18 @@
         <a href="./hotels.html" class="activeMenu">Hotels</a>
         <a href="./bookrooms.html">Booked Rooms</a>
       </div>
+      <div class="burger" id="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
     </nav>
+    <div class="mobileMenu hidden" id="mobileMenu">
+      <a href="./index.html">Home</a>
+      <a href="./rooms.html">Rooms</a>
+      <a href="./hotels.html" class="activeMenu">Hotels</a>
+      <a href="./bookrooms.html">Booked Rooms</a>
+    </div>
     <main>
       <section class="hotels">
         <div class="cities">

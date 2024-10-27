@@ -1,4 +1,11 @@
 let favoriteRooms = document.getElementById("favoriteRoomsList");
+let burgerBtn = document.getElementById("burger");
+let burgerMenu = document.getElementById("mobileMenu");
+
+burgerBtn.addEventListener("click", function () {
+  burgerMenu.classList.toggle("hidden");
+  burgerBtn.classList.toggle("burgerToggle");
+});
 
 function showFavoriteCards(item) {
   return `

@@ -6,6 +6,13 @@ let addInfo = document.getElementById("addInfo");
 let checkIn = document.getElementById("checkin");
 let checkOut = document.getElementById("checkout");
 let loading = document.getElementById("loading");
+let burgerBtn = document.getElementById("burger");
+let burgerMenu = document.getElementById("mobileMenu");
+
+burgerBtn.addEventListener("click", function () {
+  burgerMenu.classList.toggle("hidden");
+  burgerBtn.classList.toggle("burgerToggle");
+});
 
 let today = new Date().toISOString().split("T")[0];
 checkIn.setAttribute("min", today);

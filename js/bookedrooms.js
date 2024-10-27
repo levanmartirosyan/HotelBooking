@@ -1,5 +1,12 @@
 let bookedRooms = document.getElementById("bookedRooms");
 let loading = document.getElementById("loading");
+let burgerBtn = document.getElementById("burger");
+let burgerMenu = document.getElementById("mobileMenu");
+
+burgerBtn.addEventListener("click", function () {
+  burgerMenu.classList.toggle("hidden");
+  burgerBtn.classList.toggle("burgerToggle");
+});
 
 function sanitizeHTML(string) {
   const div = document.createElement("div");

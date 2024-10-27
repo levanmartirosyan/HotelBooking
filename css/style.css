@@ -7,27 +7,35 @@
 body {
   font-family: sans-serif;
   width: 100%;
-  position: absolute;
+  position: relative;
 }
 body nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   width: 100%;
   height: 85px;
   padding: 0 10%;
   background-color: #ffffff;
+  z-index: 9999;
 }
 body nav .logo {
-  padding-right: 60px;
+  padding-right: 50px;
   position: relative;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+body nav .logo a {
+  padding: 5px 0;
+}
 body nav .logo a img {
-  width: 40px;
-  height: 45px;
+  width: 100%;
+  height: 50px;
 }
 body nav .logo::after {
   content: "";
@@ -44,7 +52,7 @@ body nav .navMenu {
   align-items: center;
   justify-content: center;
   gap: 35px;
-  padding-left: 60px;
+  padding-left: 50px;
 }
 body nav .navMenu a {
   text-decoration: none;
@@ -60,6 +68,81 @@ body nav .navMenu .activeMenu {
   color: #70d2de;
   font-weight: bold;
   transition: 0.3s ease;
+}
+body nav .burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  width: 40px;
+  height: 35px;
+  border: 1px solid #b1b1b1;
+}
+body nav .burger .line {
+  width: 60%;
+  height: 2px;
+  background-color: #b1b1b1;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+body nav .burgerToggle .line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+body nav .burgerToggle .line:nth-child(2) {
+  opacity: 0;
+}
+body nav .burgerToggle .line:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+body div.mobileMenu {
+  position: fixed;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  max-height: 170px !important;
+  height: 100%;
+  background-color: #ffffff;
+  margin: 0 auto;
+  margin-top: 82px;
+  list-style: none;
+  gap: 25px;
+  transition: 0.5s ease;
+  z-index: 100;
+}
+body div.mobileMenu a {
+  text-decoration: none;
+  color: #5e5e5e;
+  font-size: 15px;
+  position: relative;
+  width: 100%;
+  padding-left: 5%;
+}
+body div.mobileMenu a::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #c0c0c0;
+}
+body div.mobileMenu .activeMenu {
+  color: #70d2de;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+body div.mobileMenu a:nth-child(4)::after {
+  display: none;
+}
+body main {
+  margin-top: 85px;
 }
 body main section.mainSlide {
   width: 100%;
@@ -127,7 +210,7 @@ body main section.favouriteRooms .title h1 {
   width: 380px;
 }
 body main section.favouriteRooms .title .titleLine {
-  width: 50%;
+  width: 45%;
   height: 2px;
   border-radius: 3px;
   background-color: rgba(182, 182, 182, 0.6);
@@ -174,6 +257,7 @@ body main section.UspSection .usp {
   width: 100%;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 70px;
 }
 body main section.UspSection .usp .uspBox {
@@ -280,6 +364,7 @@ body main section.hotels .hotels {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
   width: 100%;
   gap: 30px;
 }
@@ -295,8 +380,26 @@ body main section.rooms .roomTypes {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 30px;
+  gap: 35px;
   margin-top: 30px;
+}
+body main section.rooms .roomTypes span {
+  color: #000000;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+}
+body main section.rooms .roomTypes span:hover {
+  border: 2px solid #70d2de;
+}
+body main section.rooms .roomTypes .roomTypesChoosed {
+  background-color: #70d2de;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #ffffff;
 }
 body main section.rooms .roomsList {
   width: 100%;
@@ -310,7 +413,7 @@ body main section.rooms form.filterForm {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 40px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   padding: 10px;
   width: 100%;
@@ -333,6 +436,7 @@ body main section.rooms form.filterForm div .price-range label {
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 10px;
+  width: 100%;
 }
 body main section.rooms form.filterForm div .price-range .range-slider {
   position: relative;
@@ -924,4 +1028,272 @@ body .loadingGif {
 body .loadingGif img {
   width: 100px;
   height: 100px;
+}
+body .hidden {
+  transform: translateY(-150%);
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  body main section.mainSlide .mainText h1 {
+    font-size: 28px;
+  }
+  body main section.mainSlide .mainText h2 {
+    font-size: 20px;
+  }
+  body main section.mainSlide .mainText a {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1020px) {
+  body nav {
+    padding: 0 4%;
+  }
+  body main section.rooms {
+    padding: 0 4%;
+  }
+  body main section.rooms form.filterForm {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm div {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm div .price-range label {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+  }
+  body main section.rooms form.filterForm div .price-range .range-slider {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm div .price-range .range-slider input[type=range] {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm div .price-range .range-slider .slider-track {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm div .price-range .price-values {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm div .price-range .price-values span {
+    font-size: 13px;
+  }
+  body main section.rooms form.filterForm div label {
+    font-weight: bold;
+    font-size: 13px;
+    color: #5e5e5e;
+  }
+  body main section.rooms form.filterForm div select {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .roomTypeSelect {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .roomTypeSelect select {
+    max-width: 100px;
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .checkInOut {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .checkInOut div {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .checkInOut div input {
+    max-width: 100px;
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .guests {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .guests select {
+    max-width: 50px;
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .btnBox {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 900px) {
+  body main section.mainSlide .mainText {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+  body main section.mainSlide .mainText h1 {
+    font-size: 24px;
+  }
+  body main section.mainSlide .mainText h2 {
+    font-size: 16px;
+  }
+  body main section.mainSlide .mainText a {
+    font-size: 14px;
+  }
+  body main section.favouriteRooms .title h1 {
+    margin: 0 5px;
+  }
+  body main section.favouriteRooms div.favouriteRoomsList {
+    grid-template-columns: auto auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  body nav {
+    padding: 0 5%;
+    justify-content: space-between;
+  }
+  body nav .logo a img {
+    width: 100%;
+    height: 50px;
+  }
+  body nav .logo::after {
+    display: none;
+  }
+  body nav .navMenu {
+    display: none;
+  }
+  body nav .burger {
+    display: flex;
+  }
+  body div.mobileMenu {
+    display: flex;
+  }
+  body main section.favouriteRooms {
+    padding: 0 5%;
+  }
+  body main section.rooms .roomsList {
+    grid-template-columns: auto auto;
+  }
+  body main section.rooms .roomTypes {
+    gap: 5px;
+  }
+  body main section.rooms form.filterForm {
+    width: 100%;
+    flex-direction: column;
+  }
+  body main section.rooms form.filterForm div {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm div .price-range {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm div .price-range label {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+  }
+  body main section.rooms form.filterForm div .price-range .range-slider {
+    width: 100%;
+    max-width: 768px;
+  }
+  body main section.rooms form.filterForm div .price-range .range-slider input[type=range] {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm div .price-range .range-slider .slider-track {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm div .price-range .price-values {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm div .price-range .price-values span {
+    font-size: 13px;
+  }
+  body main section.rooms form.filterForm div label {
+    font-size: 13px;
+  }
+  body main section.rooms form.filterForm div select {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .roomTypeSelect {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .roomTypeSelect select {
+    max-width: 768px;
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .checkInOut {
+    width: 100%;
+    flex-direction: column;
+  }
+  body main section.rooms form.filterForm .checkInOut div {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .checkInOut div input {
+    max-width: 768px;
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .guests {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .guests select {
+    max-width: 768px;
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .btnBox {
+    width: 100%;
+  }
+  body main section.rooms form.filterForm .btnBox button {
+    max-width: 768px;
+    width: 100%;
+  }
+  body footer {
+    justify-content: center;
+    padding: 0;
+    text-align: center;
+  }
+  body footer p {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 650px) {
+  body main section.mainSlide .mainText {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+  body main section.mainSlide .mainText h1 {
+    font-size: 24px;
+  }
+  body main section.mainSlide .mainText h2 {
+    font-size: 16px;
+  }
+  body main section.mainSlide .mainText a {
+    font-size: 14px;
+  }
+  body main section.favouriteRooms div.favouriteRoomsList {
+    grid-template-columns: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  body main section.mainSlide .mainText {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+  body main section.mainSlide .mainText h1 {
+    font-size: 17px;
+  }
+  body main section.mainSlide .mainText h2 {
+    font-size: 13px;
+  }
+  body main section.mainSlide .mainText a {
+    padding: 10px 15px;
+  }
+  body main section.rooms {
+    padding: 0 4%;
+  }
+  body main section.rooms .roomsList {
+    justify-content: center;
+    grid-template-columns: auto;
+  }
+  body main section.rooms .roomTypes {
+    gap: 5px;
+  }
+  body main section.rooms .roomTypes span {
+    font-size: 13px;
+    padding: 7px 10px;
+    text-align: center;
+  }
+  body main section.rooms .roomTypes .roomTypesChoosed {
+    padding: 7px 10px;
+  }
 }/*# sourceMappingURL=style.css.map */

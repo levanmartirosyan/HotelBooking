@@ -6,6 +6,13 @@ let resetBtn = document.getElementById("resetBtn");
 let checkIn = document.getElementById("checkin");
 let checkOut = document.getElementById("checkout");
 let loading = document.getElementById("loading");
+let burgerBtn = document.getElementById("burger");
+let burgerMenu = document.getElementById("mobileMenu");
+
+burgerBtn.addEventListener("click", function () {
+  burgerMenu.classList.toggle("hidden");
+  burgerBtn.classList.toggle("burgerToggle");
+});
 
 function showAllRooms(item) {
   return `
@@ -25,8 +32,12 @@ function showAllRooms(item) {
 `;
 }
 
-function getAllRooms() {
+function getAllRooms(element) {
   loading.style.display = "block";
+  document.querySelectorAll(".roomTypesItem").forEach((btn) => {
+    btn.classList.remove("roomTypesChoosed");
+  });
+  element.classList.add("roomTypesChoosed");
   fetch("https://hotelbooking.stepprojects.ge/api/Rooms/GetAll")
     .then((response) => response.json())
     .then((data) => {
@@ -37,35 +48,45 @@ function getAllRooms() {
       });
     });
 }
-getAllRooms();
 
 function showRoomTypes(item) {
   return `
-    <span class="roomTypesItem" onclick="showRoomsByCategory(${item.roomTypeId})">${item.name}</span>
-    `;
+    <span class="roomTypesItem" onclick="showRoomsByCategory(${item.id}, this)">${item.name}</span>
+  `;
 }
 
-function showRoomsByCategory(roomTypeId) {
-  fetch(`https://hotelbooking.stepprojects.ge/api/Rooms/GetAll`)
+function showRoomsByCategory(roomTypeId, element) {
+  document.querySelectorAll(".roomTypesItem").forEach((btn) => {
+    btn.classList.remove("roomTypesChoosed");
+  });
+  element.classList.add("roomTypesChoosed");
+
+  fetch("https://hotelbooking.stepprojects.ge/api/Rooms/GetAll")
     .then((response) => response.json())
-    .then((finalData) => {
-      const filteredRooms = finalData.filter(
-        (room) => room.roomTypeId === roomTypeId
-      );
-      console.log(filteredRooms);
+    .then((data) => {
+      let filteredRooms = data.filter((room) => room.roomTypeId === roomTypeId);
 
       rooms.innerHTML = "";
-      rooms.innerHTML += showAllRooms(filteredRooms);
+
+      filteredRooms.forEach((item) => {
+        rooms.innerHTML += showAllRooms(item);
+      });
     });
 }
 
 function getRoomTypes() {
   fetch("https://hotelbooking.stepprojects.ge/api/Rooms/GetRoomTypes")
     .then((res) => res.json())
-    .then((data) =>
-      data.forEach((item) => (roomTypes.innerHTML += showRoomTypes(item)))
-    );
+    .then((data) => {
+      roomTypes.innerHTML = `<span class="roomTypesItem roomTypesChoosed" onclick="getAllRooms(this)">All</span>`; // Default class here
+
+      data.forEach((item) => {
+        roomTypes.innerHTML += showRoomTypes(item);
+      });
+      getAllRooms(document.querySelector(".roomTypesItem.roomTypesChoosed"));
+    });
 }
+
 getRoomTypes();
 
 filterForm.addEventListener("submit", function (e) {

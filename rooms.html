@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rooms Page | Hotel Booking</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="icon" href="./images/logos.svg" type="image/png" />
+    <link rel="icon" href="./images/StarHotelLogo.png" type="image/png" />
   </head>
   <body>
     <div id="loading" style="display: none" class="loadingGif">
@@ -13,11 +13,7 @@
     </div>
     <nav>
       <div class="logo">
-        <a href="./index.html"
-          ><img
-            src="https://fsx1.itstep.org/api/v1/files/KI8ivg78U08nXDGDQ-O_18P1-0F49u4b"
-            alt=""
-        /></a>
+        <a href="./index.html"><img src="./images/logo-retina.png" alt="" /></a>
       </div>
       <div class="navMenu">
         <a href="./index.html">Home</a>
@@ -25,12 +21,21 @@
         <a href="./hotels.html">Hotels</a>
         <a href="./bookrooms.html">Booked Rooms</a>
       </div>
+      <div class="burger" id="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
     </nav>
+    <div class="mobileMenu hidden" id="mobileMenu">
+      <a href="./index.html">Home</a>
+      <a href="./rooms.html" class="activeMenu">Rooms</a>
+      <a href="./hotels.html">Hotels</a>
+      <a href="./bookrooms.html">Booked Rooms</a>
+    </div>
     <main>
       <section class="rooms">
-        <div class="roomTypes" id="roomTypes">
-          <span onclick="getAllRooms()">All</span>
-        </div>
+        <div class="roomTypes" id="roomTypes"></div>
         <form action="" class="filterForm" id="filterForm">
           <div>
             <div class="price-range">

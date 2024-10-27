@@ -1,4 +1,11 @@
 let hotels = document.getElementById("hotels");
+let burgerBtn = document.getElementById("burger");
+let burgerMenu = document.getElementById("mobileMenu");
+
+burgerBtn.addEventListener("click", function () {
+  burgerMenu.classList.toggle("hidden");
+  burgerBtn.classList.toggle("burgerToggle");
+});
 
 function getAllHotels() {
   fetch("https://hotelbooking.stepprojects.ge/api/Hotels/GetAll")
