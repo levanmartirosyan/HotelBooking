@@ -8,6 +8,12 @@ let checkOut = document.getElementById("checkout");
 let loading = document.getElementById("loading");
 let burgerBtn = document.getElementById("burger");
 let burgerMenu = document.getElementById("mobileMenu");
+let filterErrorResult = document.getElementById("filterErrorResult");
+let filterSuccessResult = document.getElementById("filterSuccessResult");
+let anyInfoResult = document.getElementById("anyInfoResult");
+let errorBox = document.getElementById("errorBox");
+let successBox = document.getElementById("successBox");
+let anyInfoBox = document.getElementById("anyInfoBox");
 
 burgerBtn.addEventListener("click", function () {
   burgerMenu.classList.toggle("hidden");
@@ -23,7 +29,13 @@ checkOut.addEventListener("change", function () {
   let checkOutDate = new Date(checkOut.value);
 
   if (checkOutDate <= checkInDate) {
-    alert("Check-out date cannot be earlier than check-in date.");
+    errorBox.style.opacity = 1;
+    errorBox.style.transform = "translateY(20px)";
+    filterErrorResult.innerText =
+      "Check-out date cannot be earlier than check-in date!";
+    setTimeout(() => {
+      errorBox.style.transform = "translateY(-100px)";
+    }, 1500);
     checkOut.value = "";
   }
 });
@@ -110,6 +122,21 @@ bookingForm.addEventListener("submit", function (e) {
     body: JSON.stringify(formInfo),
   })
     .then((res) => res.text())
-    .then((pasuxi) => alert(pasuxi))
-    .catch((err) => alert(err));
+    .then((pasuxi) => {
+      anyInfoBox.style.opacity = 1;
+      anyInfoBox.style.transform = "translateY(20px)";
+      anyInfoResult.innerText = pasuxi;
+      setTimeout(() => {
+        anyInfoBox.style.transform = "translateY(-100px)";
+        bookingForm.reset();
+      }, 2000);
+    })
+    .catch((err) => {
+      errorBox.style.opacity = 1;
+      errorBox.style.transform = "translateY(20px)";
+      filterErrorResult.innerText = err;
+      setTimeout(() => {
+        errorBox.style.transform = "translateY(-100px)";
+      }, 2000);
+    });
 });

@@ -6,10 +6,26 @@
     <title>Booking Page | Hotel Booking</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" href="./images/StarHotelLogo.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
   </head>
   <body>
     <div id="loading" style="display: none" class="loadingGif">
       <img src="./images/loading.gif" alt="Loading..." />
+    </div>
+    <div class="errorBox" id="errorBox">
+      <i class="fi fi-rr-exclamation"></i>
+      <span id="filterErrorResult"></span>
+    </div>
+    <div class="successBox" id="successBox">
+      <i class="fi fi-rs-check-circle"></i>
+      <span id="filterSuccessResult"></span>
     </div>
     <nav>
       <div class="logo">
@@ -44,12 +60,12 @@
             <tr>
               <th colspan="2">Hotel</th>
               <th colspan="2">Room</th>
-              <th colspan="3">Customer</th>
+              <th>Customer</th>
               <th>Status</th>
               <th>Check in</th>
               <th>Check out</th>
               <th>Total Price</th>
-              <th colspan="2">Actions</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody id="bookedRooms"></tbody>

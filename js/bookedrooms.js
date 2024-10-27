@@ -2,6 +2,10 @@ let bookedRooms = document.getElementById("bookedRooms");
 let loading = document.getElementById("loading");
 let burgerBtn = document.getElementById("burger");
 let burgerMenu = document.getElementById("mobileMenu");
+let filterErrorResult = document.getElementById("filterErrorResult");
+let filterSuccessResult = document.getElementById("filterSuccessResult");
+let errorBox = document.getElementById("errorBox");
+let successBox = document.getElementById("successBox");
 
 burgerBtn.addEventListener("click", function () {
   burgerMenu.classList.toggle("hidden");
@@ -47,8 +51,6 @@ function showBookedRooms(item, hotel, room) {
           item.customerPhone == null || "" ? "Not Chosen" : item.customerPhone
         )}</span>
       </td>
-      <td></td>
-      <td></td>
       <td>
         <span class="status">${sanitizeHTML(
           item.isConfirmed ? "Booked" : "Unconfirmed"
@@ -110,9 +112,19 @@ function cancelBooking(bookingId) {
     if (response) {
       const row = document.getElementById(`booking-${bookingId}`);
       if (row) row.remove();
-      alert("Booking canceled successfully.");
+      successBox.style.opacity = 1;
+      successBox.style.transform = "translateY(20px)";
+      filterSuccessResult.innerText = "Booking Canceled successfully!";
+      setTimeout(() => {
+        successBox.style.transform = "translateY(-100px)";
+      }, 1500);
     } else {
-      alert("Failed to cancel booking.");
+      errorBox.style.opacity = 1;
+      errorBox.style.transform = "translateY(20px)";
+      filterErrorResult.innerText = "Failed to cancel booking!";
+      setTimeout(() => {
+        errorBox.style.transform = "translateY(-100px)";
+      }, 1500);
     }
   });
 }

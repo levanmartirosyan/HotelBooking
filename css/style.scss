@@ -13,6 +13,87 @@ body {
   font-family: sans-serif;
   width: 100%;
   position: relative;
+  .errorBox {
+    max-width: 500px;
+    width: 100%;
+    background-color: #e60000;
+    color: $third;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9999;
+    border-radius: 10px;
+    transition: transform 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transform: translateY(-100px);
+    opacity: 0;
+    i {
+      font-size: 22px;
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+  .successBox {
+    max-width: 500px;
+    width: 100%;
+    background-color: rgb(3, 160, 3);
+    color: $third;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9999;
+    border-radius: 10px;
+    transition: transform 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transform: translateY(-100px);
+    opacity: 0;
+    i {
+      font-size: 22px;
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+  .anyInfoBox {
+    max-width: 500px;
+    width: 100%;
+    background-color: $primary;
+    color: $third;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9999;
+    border-radius: 10px;
+    transition: transform 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transform: translateY(-100px);
+    opacity: 0;
+    i {
+      font-size: 22px;
+    }
+    span {
+      font-size: 16px;
+    }
+  }
   nav {
     position: fixed;
     top: 0;
@@ -24,7 +105,7 @@ body {
     height: 85px;
     padding: 0 10%;
     background-color: $third;
-    z-index: 9999;
+    z-index: 1000;
     .logo {
       padding-right: 50px;
       position: relative;
@@ -120,7 +201,7 @@ body {
     list-style: none;
     gap: 25px;
     transition: 0.5s ease;
-    z-index: 100;
+    z-index: 10;
     a {
       text-decoration: none;
       color: $secondary;
@@ -614,6 +695,7 @@ body {
         margin-top: 50px;
         width: 100%;
         thead {
+          width: 100%;
           position: relative;
           border: 2px solid rgba(182, 182, 182, 0.6);
           tr {
@@ -727,11 +809,11 @@ body {
         .resTitle {
           display: flex;
           align-items: center;
+          width: 100%;
           h1 {
             color: $secondary;
             font-weight: normal;
             font-size: 24px;
-            width: 180px;
             margin: 0 30px;
             text-align: center;
             width: 380px;
@@ -827,10 +909,9 @@ body {
             color: $secondary;
             font-weight: normal;
             font-size: 24px;
-            width: 180px;
             margin: 0 30px;
             text-align: center;
-            width: 380px;
+            width: 100%;
           }
           .titleLine {
             width: 50%;
@@ -1057,6 +1138,22 @@ body {
           }
         }
       }
+      section.bookedRooms {
+        overflow: scroll;
+        table {
+        }
+      }
+      section.detailsPage {
+        flex-direction: column;
+        form.bookingForm {
+          max-width: 700px;
+          width: 100%;
+        }
+      }
+      section.roomDescription {
+        flex-direction: column;
+        gap: 70px;
+      }
     }
   }
 }
@@ -1259,7 +1356,7 @@ body {
               width: 100%;
               input {
                 max-width: 768px;
-                width: 100%;
+                width: 100% !important;
               }
             }
           }
@@ -1274,6 +1371,24 @@ body {
             width: 100%;
             button {
               max-width: 768px;
+              width: 100%;
+            }
+          }
+        }
+      }
+      section.detailsPage {
+        .slider {
+          width: 100%;
+          .slides {
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        form.bookingForm {
+          .resTitle {
+            h1 {
               width: 100%;
             }
           }
@@ -1313,6 +1428,28 @@ body {
       section.favouriteRooms {
         div.favouriteRoomsList {
           grid-template-columns: auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    main {
+      section.roomDescription {
+        .left {
+          .overview {
+            div {
+              gap: 20px;
+              span {
+                font-size: 12px;
+                i {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
         }
       }
     }

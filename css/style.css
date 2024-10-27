@@ -9,6 +9,87 @@ body {
   width: 100%;
   position: relative;
 }
+body .errorBox {
+  max-width: 500px;
+  width: 100%;
+  background-color: #e60000;
+  color: #ffffff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 9999;
+  border-radius: 10px;
+  transition: transform 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transform: translateY(-100px);
+  opacity: 0;
+}
+body .errorBox i {
+  font-size: 22px;
+}
+body .errorBox span {
+  font-size: 16px;
+}
+body .successBox {
+  max-width: 500px;
+  width: 100%;
+  background-color: rgb(3, 160, 3);
+  color: #ffffff;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 9999;
+  border-radius: 10px;
+  transition: transform 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transform: translateY(-100px);
+  opacity: 0;
+}
+body .successBox i {
+  font-size: 22px;
+}
+body .successBox span {
+  font-size: 16px;
+}
+body .anyInfoBox {
+  max-width: 500px;
+  width: 100%;
+  background-color: #70d2de;
+  color: #ffffff;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 9999;
+  border-radius: 10px;
+  transition: transform 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transform: translateY(-100px);
+  opacity: 0;
+}
+body .anyInfoBox i {
+  font-size: 22px;
+}
+body .anyInfoBox span {
+  font-size: 16px;
+}
 body nav {
   position: fixed;
   top: 0;
@@ -20,7 +101,7 @@ body nav {
   height: 85px;
   padding: 0 10%;
   background-color: #ffffff;
-  z-index: 9999;
+  z-index: 1000;
 }
 body nav .logo {
   padding-right: 50px;
@@ -115,7 +196,7 @@ body div.mobileMenu {
   list-style: none;
   gap: 25px;
   transition: 0.5s ease;
-  z-index: 100;
+  z-index: 10;
 }
 body div.mobileMenu a {
   text-decoration: none;
@@ -612,6 +693,7 @@ body main section.bookedRooms table {
   width: 100%;
 }
 body main section.bookedRooms table thead {
+  width: 100%;
   position: relative;
   border: 2px solid rgba(182, 182, 182, 0.6);
 }
@@ -724,12 +806,12 @@ body main section.detailsPage form.bookingForm {
 body main section.detailsPage form.bookingForm .resTitle {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 body main section.detailsPage form.bookingForm .resTitle h1 {
   color: #5e5e5e;
   font-weight: normal;
   font-size: 24px;
-  width: 180px;
   margin: 0 30px;
   text-align: center;
   width: 380px;
@@ -828,10 +910,9 @@ body main section.roomDescription .left .resTitle h1 {
   color: #5e5e5e;
   font-weight: normal;
   font-size: 24px;
-  width: 180px;
   margin: 0 30px;
   text-align: center;
-  width: 380px;
+  width: 100%;
 }
 body main section.roomDescription .left .resTitle .titleLine {
   width: 50%;
@@ -1046,6 +1127,20 @@ body .hidden {
   body main section.mainSlide .mainText a {
     font-size: 14px;
   }
+  body main section.bookedRooms {
+    overflow: scroll;
+  }
+  body main section.detailsPage {
+    flex-direction: column;
+  }
+  body main section.detailsPage form.bookingForm {
+    max-width: 700px;
+    width: 100%;
+  }
+  body main section.roomDescription {
+    flex-direction: column;
+    gap: 70px;
+  }
 }
 @media screen and (max-width: 1020px) {
   body nav {
@@ -1221,7 +1316,7 @@ body .hidden {
   }
   body main section.rooms form.filterForm .checkInOut div input {
     max-width: 768px;
-    width: 100%;
+    width: 100% !important;
   }
   body main section.rooms form.filterForm .guests {
     width: 100%;
@@ -1235,6 +1330,16 @@ body .hidden {
   }
   body main section.rooms form.filterForm .btnBox button {
     max-width: 768px;
+    width: 100%;
+  }
+  body main section.detailsPage .slider {
+    width: 100%;
+  }
+  body main section.detailsPage .slider .slides img {
+    width: 100%;
+    height: 100%;
+  }
+  body main section.detailsPage form.bookingForm .resTitle h1 {
     width: 100%;
   }
   body footer {
@@ -1263,6 +1368,17 @@ body .hidden {
   }
   body main section.favouriteRooms div.favouriteRoomsList {
     grid-template-columns: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  body main section.roomDescription .left .overview div {
+    gap: 20px;
+  }
+  body main section.roomDescription .left .overview div span {
+    font-size: 12px;
+  }
+  body main section.roomDescription .left .overview div span i {
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 500px) {
