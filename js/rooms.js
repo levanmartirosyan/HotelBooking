@@ -5,7 +5,6 @@ let cards = document.getElementById("cards");
 let resetBtn = document.getElementById("resetBtn");
 let checkIn = document.getElementById("checkin");
 let checkOut = document.getElementById("checkout");
-let loading = document.getElementById("loading");
 let burgerBtn = document.getElementById("burger");
 let burgerMenu = document.getElementById("mobileMenu");
 
@@ -33,7 +32,6 @@ function showAllRooms(item) {
 }
 
 function getAllRooms(element) {
-  loading.style.display = "block";
   document.querySelectorAll(".roomTypesItem").forEach((btn) => {
     btn.classList.remove("roomTypesChoosed");
   });
@@ -44,7 +42,6 @@ function getAllRooms(element) {
       rooms.innerHTML = "";
       data.forEach((item) => {
         rooms.innerHTML += showAllRooms(item);
-        loading.style.display = "none";
       });
     });
 }
@@ -107,7 +104,7 @@ filterForm.addEventListener("submit", function (e) {
     .then((data) => {
       rooms.innerHTML = "";
       data.forEach((item) => {
-        rooms.innerHTML += showRooms(item);
+        rooms.innerHTML += showAllRooms(item);
       });
     });
 });

@@ -35,7 +35,9 @@ body nav .logo a {
 }
 body nav .logo a img {
   width: 100%;
-  height: 50px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 body nav .logo::after {
   content: "";
