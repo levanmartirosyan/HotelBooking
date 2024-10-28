@@ -431,6 +431,7 @@ body main section.hotels .cities {
   gap: 15px;
   font-size: 15px;
   color: #5e5e5e;
+  margin-top: 30px;
 }
 body main section.hotels .cities span:nth-child(1) {
   width: 45px;

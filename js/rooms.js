@@ -122,7 +122,13 @@ checkOut.addEventListener("change", function () {
   let checkOutDate = new Date(checkOut.value);
 
   if (checkOutDate <= checkInDate) {
-    alert("Check-out date cannot be earlier than check-in date.");
+    errorBox.style.opacity = 1;
+    errorBox.style.transform = "translateY(20px)";
+    filterErrorResult.innerText =
+      "Check-out date cannot be earlier than check-in date!";
+    setTimeout(() => {
+      errorBox.style.transform = "translateY(-100px)";
+    }, 1500);
     checkOut.value = "";
   }
 });
